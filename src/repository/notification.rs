@@ -1,7 +1,6 @@
 use std::sync::RwLock;
 
 use lazy_static::lazy_static;
-use rocket::http::hyper::body::HttpBody;
 
 use crate::model::notification::Notification;
 
