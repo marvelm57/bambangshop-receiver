@@ -68,16 +68,16 @@ You can install Postman via this website: https://www.postman.com/downloads/
     -   [x] Commit: `Implement list_all_as_string function in Notification repository.`
     -   [x] Write answers of your learning module's "Reflection Subscriber-1" questions in this README.
 -   **STAGE 3: Implement services and controllers**
-    -   [ ] Commit: `Create Notification service struct skeleton.`
-    -   [ ] Commit: `Implement subscribe function in Notification service.`
-    -   [ ] Commit: `Implement subscribe function in Notification controller.`
-    -   [ ] Commit: `Implement unsubscribe function in Notification service.`
-    -   [ ] Commit: `Implement unsubscribe function in Notification controller.`
-    -   [ ] Commit: `Implement receive_notification function in Notification service.`
-    -   [ ] Commit: `Implement receive function in Notification controller.`
-    -   [ ] Commit: `Implement list_messages function in Notification service.`
-    -   [ ] Commit: `Implement list function in Notification controller.`
-    -   [ ] Write answers of your learning module's "Reflection Subscriber-2" questions in this README.
+    -   [x] Commit: `Create Notification service struct skeleton.`
+    -   [x] Commit: `Implement subscribe function in Notification service.`
+    -   [x] Commit: `Implement subscribe function in Notification controller.`
+    -   [x] Commit: `Implement unsubscribe function in Notification service.`
+    -   [x] Commit: `Implement unsubscribe function in Notification controller.`
+    -   [x] Commit: `Implement receive_notification function in Notification service.`
+    -   [x] Commit: `Implement receive function in Notification controller.`
+    -   [x] Commit: `Implement list_messages function in Notification service.`
+    -   [x] Commit: `Implement list function in Notification controller.`
+    -   [x] Write answers of your learning module's "Reflection Subscriber-2" questions in this README.
 
 ## Your Reflections
 This is the place for you to write reflections:
@@ -92,3 +92,12 @@ This is the place for you to write reflections:
 > Pada **Rust**, _static variable_ secara _default_ bersifat _immutable_ karena **_mutable static variable_**(dideklarasi menggunakan **'mut'**) dianggap `unsafe` ketika ada _multiple thread_ yang mengakses data tersebut secara konkuren karena dapat berpotensi menyebabkan **_data race_**. 
 
 #### Reflection Subscriber-2
+1. Have you explored things outside of the steps in the tutorial, for example: src/lib.rs? If not, explain why you did not do so. If yes, explain things that you have learned from those other parts of code.
+> **Ya**, saya telah melihat bagian kode lain seperti `src/lib.rs`. Pada `src/lib.rs`, terdapat **konfigurasi penting** yang digunakan pada aplikasi. Misalnya, **APP_CONFIG** sebagai konfigurasi yang **mengandung _instance_ URL** dan **nama**. Selain itu, terdapat konfigurasi untuk **meng-_handle_ _error response_**. Oleh karena itu, `src/lib.rs` berfungsi untuk **mendefinisikan komponen** dan **konfigurasi penting** yang diperlukan apilkasi.
+
+2. Since you have completed the tutorial by now and have tried to test your notification system by spawning multiple instances of Receiver, explain how Observer pattern eases you to plug in more subscribers. How about spawning more than one instance of Main app, will it still be easy enough to add to the system?
+> **_Observer pattern_** memudahkan kita untuk menambah _subscriber_ dengan **memisahkan _subscriber_** (atau _observer_) dan **_publisher_**(atau _subject)_. Hal ini meningkatkan **fleksibilitas** dalam **menambah _subscriber_** baru **tanpa mengubah implementasi _publisher_**. Selain itu, _Spawning_ lebih dari satu _instance_ Main dapat dilakukan **dengan mudah** karena **sistem notifikasi** dapat **berjalan secara parallel**. Namun, meski begitu, tetap perlu memperhatikan arsitektur kode untuk memastikan koordinasi antar _instance_.
+
+3. Have you tried to make your own Tests, or enhance documentation on your Postman collection? If you have tried those features, tell us whether it is useful for your work (it can be your tutorial work or your Group Project).
+> **Ya**, menggunakan Postman dapat **sangat membantu** dalam pengerjaan tutorial dan TK karena dapat memudahkan kita dalam **menguji API endpoint secara _automate_**.
+
